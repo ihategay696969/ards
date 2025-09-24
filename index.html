@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素守護者 (Elemental Guardians)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-board">
+            <div id="base"></div>
+        </div>
+        <div id="ui-panel">
+            <div class="info-box">
+                <div>體力: <span id="stamina-display">10</span> / 10</div>
+            </div>
+            <div class="info-box">
+                <div>基地生命: <span id="base-health-display">100</span></div>
+            </div>
+            <div id="hand">
+                <!-- 卡牌將由 JavaScript 動態生成 -->
+            </div>
+            <div class="info-box">
+                <div>波次: <span id="wave-display">0</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

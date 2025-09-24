@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#game-board {
+    width: 600px;
+    height: 600px;
+    background-color: #2a2a2a;
+    border: 3px solid #555;
+    position: relative;
+/* Grid will be configured by JS */
+}
+
+.grid-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #444; /* 加上格子邊框方便觀察 */
+}
+    .grid-cell:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tower {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+.tower-fire {
+    background-color: #ff7043;
+    box-shadow: 0 0 10px #ff7043;
+}
+
+.tower-ice {
+    background-color: #4fc3f7;
+    box-shadow: 0 0 10px #4fc3f7;
+}
+
+.enemy {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #c0392b;
+    border: 1px solid #f1948a;
+    border-radius: 4px;
+    transition: top 0.1s linear, left 0.1s linear;
+}
+
+.enemy-health-bar {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #28a745; /* Green */
+}
+
+.enemy-health-bar-bg {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #dc3545; /* Red */
+}
+
+.projectile {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f1c40f;
+    box-shadow: 0 0 8px #f1c40f;
+}
+
+
+#base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #4a90e2;
+    border: 3px solid #aed6f1;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #4a90e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#ui-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #555;
+}
+
+.info-box {
+    background-color: #252525;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 120px;
+}
+
+#hand {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    border: 2px solid #ccc;
+    background-color: #4d4d4d;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 12px;
+    user-select: none;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 15px #fff;
+}
+
+.card-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-cost {
+    font-weight: bold;
+    color: #ffdd57;
+    align-self: flex-end;
+}
+
+.card-description {
+    font-size: 10px;
+    text-align: center;
+}
